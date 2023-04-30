@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="#" />
+		<script src="./scripts/jquery-3.4.1.slim.min.js"></script>
+		<script type="module" src="./index.js"></script>
+		<script type="text/javascript" src="./scripts/register.js"></script>
+		<script type="text/javascript" src="./scripts/pageSettings.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<center><img src=./imgs/logo.png width=50% height=50% /></center>
+		<center><h1 style="background-color:#111111; color:white;border-color: #ffffff; border-radius: 25px; border-style: dotted; background-color: #111111;   width: fit-content; 
+		height: fit-content; padding: 3px;">By Nadav Cherry & Ron Faygler</center></h1>
+		<table border="1" align=center cellpadding=10 cellspacing="0" bordercolor="#111111" width="100%" >
+			<tr>
+			  <td width="25%"><center><a href="#" id="welcomBTN" onclick="SetActiveDiv('welcome');"><STRONG>Welcome</STRONG></a></center></td>
+			  <td width="25%"><center><a href="#" id="registerBTN" onclick="SetActiveDiv('register');"><STRONG>Register</STRONG></a></center></td>
+			  <td width="25%"><center><a href="#" id="loginBTN" onclick="SetActiveDiv('login');"><STRONG>Login</STRONG></a></center></td>
+			  <td width="25%"><center><a href="#" onclick="popUp()"><STRONG>About</STRONG></a></center></td>
+			</tr>
+		  </table>
+	</head>
+
+	<body>
+
+		<header>
+			<h1 style="text-align:center">
+				<img src="images/chicken.png" width="60" height="60" alt="Logo" style="float: left; margin-right: 60px;">
+				<span class="pink">C</span>
+				<span class="fosdoki">H</span>
+				<span class="orange">I</span>
+				<span class="green">C</span>
+				<span class="blue">K</span>
+				<span class="red">E</span>
+				<span class="fosdoki">N</span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span class="red">I</span>
+				<span class="orange">N</span>
+				<span class="green">V</span>
+				<span class="blue">A</span>
+				<span class="pink">D</span>
+				<span class="fosdoki">E</span>
+				<span class="red">R</span>
+				<span class="green">S</span>
+			</h1>
+		</header>
+
+
+		<div id="welcome">
+			<button class="button button1" onclick="SetActiveDiv('register');">Register</button>
+			<button class="button button2" onclick="SetActiveDiv('login');">Login</button>
+		</div>
+		<br/>
+		<center><div id="register" style="border-color: #111111; border-radius: 25px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+		height: fit-content; padding: 3px;">
+			<br/>
+			<label for="lblUser">User Name:</label>
+			<input id="userRegister" class="input-box" type="text"  placeholder="UserName" />
+			<br/>
+			<br/>
+			<label for="lblPass">Password:</label>
+			<input id="passRegister" class="input-box"  placeholder="Password"/>
+			<br/>
+			<br/>
+			<label for="lblPassGood">Password again:</label>
+			<input id="passRegisterGood" class="input-box"  placeholder="Password"/>
+			<br/>
+			<br/>
+			<label for="lblFname">First Name:</label>
+			<input id="firstNameRegister" class="input-box"  placeholder="First name" />
+			<br/>
+			<br/>
+			<label for="lblLname">Last Name:</label>
+			<input id="lastNameRegister" class="input-box"  placeholder="Last name" />
+			<br/>
+			<br/>
+			<label for="lblEmail">Email:</label>
+			<input id="emailRegister" class="input-box"  placeholder="Email" />
+			<br/>
+			<br/>
+			<label for="lblDate">Birth Date:</label>
+			<input type="date" id="dateRegister" name="trip-start" value="2018-07-22" min="1900-01-01" max="2022-12-31">
+			<br/>
+			<br/>
+			<button class="button button1" id="registerButton">Register</button>
+		</div></center>
+		<br/>
+		<center>
+		<div id="login" style="border-color: #111111; border-radius: 25px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+		height: fit-content; padding: 3px;">
+			<br/>
+			<center><label for="lblUser">User Name:</label>
+			<input id="userLogin" type="text" placeholder="UserName"/></center>
+			<br/>
+
+			<center><label for="lblPass">Password:</label>
+			<input id="passLogin" type="text" placeholder="Password"/></center>
+			<br/>
+			<button class="button button2" id="loginButton">Login</button>
+		</center>
+		<br/>
+		<dialog id="myDialog" class="dialogComponent">
+			<table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
+				<tr>
+				   <td><center><h3 style="font-size: 1.6em">Nadav Cherry & Ron Faygler</h3></center></td>
+				   <td>
+					<button style="border:#111111" onclick="closePopUp()">X</button>
+				   </td>
+				</tr>
+				<tr>
+				   <td><center><p style="font-size: 1.6em">The most difficult part for us in this assignment was changing the direction keys </p></center>
+					<center><p style="font-size:  1.6em">We used jquery for the register part and for the general settings of the page that need wait for the dom to load</p></center></td>
+				</tr>
+			 </table>
+		</dialog>
+		<center>
+		<div id="settings" style="border-color: #111111; border-radius: 25px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+		height: fit-content; padding: 3px;">
+			<h1>Settings</h1>
+
+						<label for="UpKey">Up:   </label>
+						<input id="UpKey" class="input-box-config" value="Up" type="button" onclick="changeKey('UpKey')"/>
+
+						<label for="DownKey">Down:   </label>
+						<input id="DownKey" class="input-box-config" value="Down" type="button" onclick="changeKey('DownKey')" />
+
+						<label for="LeftKey">Left:   </label>
+						<input id="LeftKey" class="input-box-config" value="Left" type="button" onclick="changeKey('LeftKey')"/>
+
+						<label for="RightKey">Right:   </label>
+						<input id="RightKey" class="input-box-config" value="Right" type="button" onclick="changeKey('RightKey')"/>
+
+						<label for="ShootKey">Shoot:   </label>
+						<input id="ShootKey" class="input-box-config" value="Shoot" type="button" onclick="changeKey('ShootKey')"/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<label for="setTime">Game Time (min 120 sec):   </label>
+						<input type = "number" id="setTm" min = "120" step = "1" value = "120" style="width: 5em"/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+					<button class="button button2" id="play">play</button>
+		</div>
+	</center>
+	<br/>
+		<div id="game">
+			<div class="row" >
+				<div id="userLeft" style="border-color: #111111; height: 100%; border-radius: 5px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+				height: fit-content; padding: 3px; position: absolute; top: 8%;">
+				<p id="mytextarea"></p>
+				</div>
+			<center><div id="top" style="border-color: #111111; z-index: 1; position: absolute; top: 8%; left: 43%; height: 100%; margin: auto; border-radius: 5px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+				 height: fit-content; padding: 3px; display: flex;">
+				<img src=./imgs/heart.png id="heart1" />
+				<img src=./imgs/heart.png id="heart2" />
+				<img src=./imgs/heart.png id="heart3" />
+				<div>SCORE:</div>
+				<div class="score" id="score">
+					<span id="score">SCORE: 0  </span>
+				  </div>
+				<div id="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TIME:
+					<span id="time1">  </span>
+				</div>
+			</div></center>
+			</div>
+			
+			<div id="game" style="position:relative; text-align: center; ">
+				<center><img class='img1'style="z-index: -1;" src="./imgs/border.png" height="1000" width="1000" alt="" id="back"/></center>
+				<center><canvas id="game1" height="600" width="600" style="background-color: white; border-radius: 25px;" ></canvas></center>
+				<div id="settings"  style="border-color: #111111;margin-left: auto; 
+				margin-right: 0; border-radius: 25px; border-style: dotted; background-color: cadetblue;   width: fit-content; 
+			height: fit-content; padding: 3px; position: absolute; top: 21%;" >
+				<h1>Settings</h1>  
+							<label for="UpKey">Up:   </label>
+							<input id="UpKey2" class="input-box-config" value="Up" type="button" disabled/>
+							<br/>
+							<label for="DownKey">Down:   </label>
+							<input id="DownKey2" class="input-box-config" value="Down" type="button" disabled />
+							<br/>
+							<label for="LeftKey">Left:   </label>
+							<input id="LeftKey2" class="input-box-config" value="Left" type="button" disabled/>
+							<br/>
+							<label for="RightKey">Right:   </label>
+							<input id="RightKey2" class="input-box-config" value="Right" type="button" disabled/>
+							<br/>
+							<label for="Shootkey">Shoot:   </label>
+							<input id="ShootKey2" class="input-box-config" value="Shoot" type="button" disabled/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<label for="setTime">Game Time (min 120 sec):   </label>
+							<input type = "number" id="setTm2" min = "120" step = "1" value = "120" style="width: 5em" disabled />
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+				</div>
+				<button class="button button2" style="position: absolute; top: 65%; left: 5%; visibility:hidden;" id="playA" onclick="SetActiveDiv('settings');" disabled>play again?</button>
+			</div>	
+			
+			<div id="highScores" class="highScores dialog">
+				<div class="highScores-content dialog-content">
+				  <span class="close-highScores close">&times;</span>
+				  <h2>High Scores:</h2>
+				  <ul id="scoresList"></ul>
+				</div>
+			</div>	
+		</div>
+		<hr style="width:100%;text-align:left;margin-left:0">
+		<table border="1" align=center cellpadding=10 cellspacing="0" bordercolor="#111111" width="25%"  >
+			<tr>
+			  <td width="50%"><center><p style="font: italic small-caps bold 15px/30px Georgia, serif;">This web application was built in association with Ben-Gurion University of the Negev as part of a Web development enviourmnets course</p><center></td>
+			  <td width="50%"><center><h2><center><u>CONTACT US</u></center></h2>
+				<h3><b>Nadav Cherry: Cherryn@post.bgu.ac.il </b></h2>
+				<h3><b>Ron Faygler: Ronfay@post.bgu.ac.il </b></h2>
+			</center></td>
+			</tr>
+		  </table>
+		
+	</body>
+</html>
